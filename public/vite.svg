@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#1e293b" rx="4"/>
+
+  <!-- Grid lines -->
+  <g stroke="#64748b" stroke-width="1.5" fill="none">
+    <!-- Vertical lines -->
+    <line x1="12" y1="6" x2="12" y2="26"/>
+    <line x1="20" y1="6" x2="20" y2="26"/>
+    <!-- Horizontal lines -->
+    <line x1="6" y1="12" x2="26" y2="12"/>
+    <line x1="6" y1="20" x2="26" y2="20"/>
+  </g>
+
+  <!-- Game pieces -->
+  <!-- X in top-left -->
+  <g stroke="#ef4444" stroke-width="2" fill="none" stroke-linecap="round">
+    <line x1="7.5" y1="7.5" x2="10.5" y2="10.5"/>
+    <line x1="10.5" y1="7.5" x2="7.5" y2="10.5"/>
+  </g>
+
+  <!-- O in center -->
+  <circle cx="16" cy="16" r="2.5" stroke="#22c55e" stroke-width="2" fill="none"/>
+
+  <!-- X in bottom-right -->
+  <g stroke="#ef4444" stroke-width="2" fill="none" stroke-linecap="round">
+    <line x1="21.5" y1="21.5" x2="24.5" y2="24.5"/>
+    <line x1="24.5" y1="21.5" x2="21.5" y2="24.5"/>
+  </g>
+</svg>
