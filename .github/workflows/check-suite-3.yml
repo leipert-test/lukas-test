@@ -1,0 +1,17 @@
+name: Check Suite 3
+
+on:
+  pull_request:
+
+jobs:
+  check-suite-3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo message
+        run: echo "Running Check Suite 3"
+
+      - name: Sleep for 5 seconds
+        run: sleep 5
+
+      - name: Continue with next steps
+        run: echo "Check Suite 3 completed successfully"
