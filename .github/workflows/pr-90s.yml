@@ -1,0 +1,17 @@
+name: PR Check (90s)
+
+on:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run check
+        run: |
+          echo "Starting 90 second check..."
+          sleep 90
+          echo "Check completed successfully"

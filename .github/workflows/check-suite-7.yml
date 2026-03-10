@@ -1,0 +1,17 @@
+name: Check Suite 7 (Long-running)
+
+on:
+  pull_request:
+
+jobs:
+  check-suite-7:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo message
+        run: echo "Running Check Suite 7 (Long-running)"
+
+      - name: Sleep for 15 seconds
+        run: sleep 15
+
+      - name: Continue with next steps
+        run: echo "Check Suite 7 completed successfully"
