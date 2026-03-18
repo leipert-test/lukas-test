@@ -1,0 +1,13 @@
+name: Merge Queue Fail
+
+on:
+  merge_group:
+
+jobs:
+  fail-after-timeout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait 20 seconds then fail
+        run: |
+          sleep 20
+          exit 1
