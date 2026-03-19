@@ -34,3 +34,8 @@ export function padStart(str, length, char = ' ') {
   return str;
 }
 
+export function padEnd(str, length, char = ' ') {
+  while (str.length < length) str = str + char;
+  return str;
+}
+
