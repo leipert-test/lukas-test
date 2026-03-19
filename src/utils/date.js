@@ -76,3 +76,7 @@ export function isFuture(date) {
   return new Date(date) > new Date();
 }
 
+export function isPast(date) {
+  return new Date(date) < new Date();
+}
+
