@@ -6,12 +6,16 @@ on:
 jobs:
   check-suite-1:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     steps:
       - name: Echo message
-        run: echo "Running Check Suite 1"
+        run: echo "Running Check Suite 1 - Shard ${{ matrix.shard }}"
 
       - name: Sleep for a few seconds
         run: sleep 5
 
       - name: Continue with next steps
-        run: echo "Check Suite 1 completed successfully"
+        run: echo "Check Suite 1 - Shard ${{ matrix.shard }} completed successfully"

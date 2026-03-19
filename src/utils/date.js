@@ -1,0 +1,122 @@
+// Date utility functions
+
+export function formatDate(date, format = 'YYYY-MM-DD') {
+  const d = new Date(date);
+  const tokens = {
+    YYYY: d.getFullYear(),
+    MM: String(d.getMonth() + 1).padStart(2, '0'),
+    DD: String(d.getDate()).padStart(2, '0'),
+    HH: String(d.getHours()).padStart(2, '0'),
+    mm: String(d.getMinutes()).padStart(2, '0'),
+    ss: String(d.getSeconds()).padStart(2, '0'),
+  };
+  return Object.entries(tokens).reduce((fmt, [token, val]) => fmt.replace(token, val), format);
+}
+
+export function daysBetween(date1, date2) {
+  const d1 = new Date(date1);
+  const d2 = new Date(date2);
+  const diffMs = Math.abs(d2 - d1);
+  return Math.floor(diffMs / (1000 * 60 * 60 * 24));
+}
+
+export function isLeapYear(year) {
+  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+}
+
+export function daysInMonth(year, month) {
+  return new Date(year, month, 0).getDate();
+}
+
+export function addDays(date, days) {
+  const result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+}
+
+export function subtractDays(date, days) {
+  return addDays(date, -days);
+}
+
+export function isWeekend(date) {
+  const day = new Date(date).getDay();
+  return day === 0 || day === 6;
+}
+
+export function getWeekDay(date) {
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  return days[new Date(date).getDay()];
+}
+
+export function getQuarter(date) {
+  return Math.ceil((new Date(date).getMonth() + 1) / 3);
+}
+
+export function startOfDay(date) {
+  const d = new Date(date);
+  d.setHours(0, 0, 0, 0);
+  return d;
+}
+
+export function endOfDay(date) {
+  const d = new Date(date);
+  d.setHours(23, 59, 59, 999);
+  return d;
+}
+
+export function isToday(date) {
+  const today = new Date();
+  const d = new Date(date);
+  return d.getDate() === today.getDate() &&
+    d.getMonth() === today.getMonth() &&
+    d.getFullYear() === today.getFullYear();
+}
+
+export function isFuture(date) {
+  return new Date(date) > new Date();
+}
+
+export function isPast(date) {
+  return new Date(date) < new Date();
+}
+
+export function timeAgo(date) {
+  const seconds = Math.floor((new Date() - new Date(date)) / 1000);
+  const intervals = [
+    { label: 'year', seconds: 31536000 },
+    { label: 'month', seconds: 2592000 },
+    { label: 'week', seconds: 604800 },
+    { label: 'day', seconds: 86400 },
+    { label: 'hour', seconds: 3600 },
+    { label: 'minute', seconds: 60 },
+  ];
+  for (const { label, seconds: s } of intervals) {
+    const count = Math.floor(seconds / s);
+    if (count >= 1) return `${count} ${label}${count > 1 ? 's' : ''} ago`;
+  }
+  return 'just now';
+}
+
+export function getAge(birthDate) {
+  const today = new Date();
+  const birth = new Date(birthDate);
+  let age = today.getFullYear() - birth.getFullYear();
+  const monthDiff = today.getMonth() - birth.getMonth();
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+    age--;
+  }
+  return age;
+}
+
+export function getBusinessDays(startDate, endDate) {
+  let count = 0;
+  const current = new Date(startDate);
+  const end = new Date(endDate);
+  while (current <= end) {
+    const day = current.getDay();
+    if (day !== 0 && day !== 6) count++;
+    current.setDate(current.getDate() + 1);
+  }
+  return count;
+}
+
