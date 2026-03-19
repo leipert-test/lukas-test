@@ -43,3 +43,12 @@ export function reverse(str) {
   return [...str].reverse().join('');
 }
 
+export function countOccurrences(str, substr) {
+  let count = 0, pos = 0;
+  while ((pos = str.indexOf(substr, pos)) !== -1) {
+    count++;
+    pos += substr.length;
+  }
+  return count;
+}
+
