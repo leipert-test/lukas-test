@@ -88,3 +88,7 @@ export function repeat(str, times) {
   return new Array(times).fill(str).join('');
 }
 
+export function trimWhitespace(str) {
+  return str.replace(/\s+/g, ' ').trim();
+}
+
