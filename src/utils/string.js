@@ -74,3 +74,8 @@ export function slugify(str) {
     .replace(/-+/g, '-');
 }
 
+export function escapeHtml(str) {
+  const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+  return str.replace(/[&<>"']/g, (c) => map[c]);
+}
+
