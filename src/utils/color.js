@@ -117,3 +117,11 @@ export function saturate(hex, amount) {
   return rgbToHex(rgb.r, rgb.g, rgb.b);
 }
 
+export function desaturate(hex, amount) {
+  const { r, g, b } = hexToRgb(hex);
+  const { h, s, l } = rgbToHsl(r, g, b);
+  const newS = Math.max(0, s - amount);
+  const rgb = hslToRgb(h, newS, l);
+  return rgbToHex(rgb.r, rgb.g, rgb.b);
+}
+
