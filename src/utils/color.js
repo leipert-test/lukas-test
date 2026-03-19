@@ -104,3 +104,8 @@ export function invertColor(hex) {
   return rgbToHex(255 - r, 255 - g, 255 - b);
 }
 
+export function adjustOpacity(hex, opacity) {
+  const { r, g, b } = hexToRgb(hex);
+  return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+}
+
