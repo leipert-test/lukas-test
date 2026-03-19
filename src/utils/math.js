@@ -103,3 +103,8 @@ export function roundTo(n, decimals = 0) {
   return Math.round(n * factor) / factor;
 }
 
+
+export function degToRad(degrees) {
+  return degrees * (Math.PI / 180);
+}
+
