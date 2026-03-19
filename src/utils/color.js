@@ -20,3 +20,12 @@ export function lighten(hex, amount) {
   );
 }
 
+export function darken(hex, amount) {
+  const { r, g, b } = hexToRgb(hex);
+  return rgbToHex(
+    Math.round(r * (1 - amount)),
+    Math.round(g * (1 - amount)),
+    Math.round(b * (1 - amount))
+  );
+}
+
