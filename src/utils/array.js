@@ -93,3 +93,7 @@ export function partition(arr, fn) {
   return [pass, fail];
 }
 
+export function first(arr, n = 1) {
+  return n === 1 ? arr[0] : arr.slice(0, n);
+}
+
