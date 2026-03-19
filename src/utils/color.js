@@ -11,3 +11,12 @@ export function rgbToHex(r, g, b) {
   return "#" + [r, g, b].map((x) => x.toString(16).padStart(2, "0")).join("");
 }
 
+export function lighten(hex, amount) {
+  const { r, g, b } = hexToRgb(hex);
+  return rgbToHex(
+    Math.min(255, Math.round(r + (255 - r) * amount)),
+    Math.min(255, Math.round(g + (255 - g) * amount)),
+    Math.min(255, Math.round(b + (255 - b) * amount))
+  );
+}
+
