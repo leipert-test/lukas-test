@@ -42,3 +42,7 @@ export function max(...args) {
   return args.reduce((m, v) => (v > m ? v : m), args[0]);
 }
 
+export function clamp(value, lower, upper) {
+  return Math.min(Math.max(value, lower), upper);
+}
+
