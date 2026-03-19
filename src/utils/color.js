@@ -109,3 +109,11 @@ export function adjustOpacity(hex, opacity) {
   return `rgba(${r}, ${g}, ${b}, ${opacity})`;
 }
 
+export function saturate(hex, amount) {
+  const { r, g, b } = hexToRgb(hex);
+  const { h, s, l } = rgbToHsl(r, g, b);
+  const newS = Math.min(100, s + amount);
+  const rgb = hslToRgb(h, newS, l);
+  return rgbToHex(rgb.r, rgb.g, rgb.b);
+}
+
