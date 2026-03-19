@@ -93,3 +93,9 @@ export function mixColors(hex1, hex2, weight = 0.5) {
   );
 }
 
+export function grayscale(hex) {
+  const { r, g, b } = hexToRgb(hex);
+  const gray = Math.round(0.299 * r + 0.587 * g + 0.114 * b);
+  return rgbToHex(gray, gray, gray);
+}
+
