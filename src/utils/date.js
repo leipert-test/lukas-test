@@ -13,3 +13,10 @@ export function formatDate(date, format = 'YYYY-MM-DD') {
   return Object.entries(tokens).reduce((fmt, [token, val]) => fmt.replace(token, val), format);
 }
 
+export function daysBetween(date1, date2) {
+  const d1 = new Date(date1);
+  const d2 = new Date(date2);
+  const diffMs = Math.abs(d2 - d1);
+  return Math.floor(diffMs / (1000 * 60 * 60 * 24));
+}
+
