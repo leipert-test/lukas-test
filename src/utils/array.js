@@ -63,3 +63,11 @@ export function compact(arr) {
   return arr.filter(Boolean);
 }
 
+export function groupBy(arr, fn) {
+  return arr.reduce((groups, item) => {
+    const key = typeof fn === 'function' ? fn(item) : item[fn];
+    (groups[key] = groups[key] || []).push(item);
+    return groups;
+  }, {});
+}
+
