@@ -97,3 +97,7 @@ export function first(arr, n = 1) {
   return n === 1 ? arr[0] : arr.slice(0, n);
 }
 
+export function last(arr, n = 1) {
+  return n === 1 ? arr[arr.length - 1] : arr.slice(-n);
+}
+
