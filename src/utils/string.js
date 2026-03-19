@@ -61,3 +61,7 @@ export function isPalindrome(str) {
   return cleaned === [...cleaned].reverse().join('');
 }
 
+export function wordCount(str) {
+  return str.trim().split(/\s+/).filter(Boolean).length;
+}
+
