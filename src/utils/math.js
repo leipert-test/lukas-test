@@ -1,0 +1,6 @@
+// Math utility functions
+
+export function add(a, b) {
+  return a + b;
+}
+
