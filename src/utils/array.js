@@ -109,3 +109,7 @@ export function product(arr) {
   return arr.reduce((total, v) => total * v, 1);
 }
 
+export function take(arr, n) {
+  return arr.slice(0, n);
+}
+
