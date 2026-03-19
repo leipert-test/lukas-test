@@ -50,3 +50,8 @@ export function lerp(start, end, t) {
   return start + (end - start) * t;
 }
 
+export function factorial(n) {
+  if (n <= 1) return 1;
+  return n * factorial(n - 1);
+}
+
