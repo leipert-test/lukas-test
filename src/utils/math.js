@@ -30,3 +30,7 @@ export function sqrt(n) {
   return Math.sqrt(n);
 }
 
+export function abs(n) {
+  return n < 0 ? -n : n;
+}
+
