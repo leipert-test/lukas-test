@@ -79,3 +79,11 @@ export function countBy(arr, fn) {
   }, {});
 }
 
+export function sortBy(arr, fn) {
+  return [...arr].sort((a, b) => {
+    const va = typeof fn === 'function' ? fn(a) : a[fn];
+    const vb = typeof fn === 'function' ? fn(b) : b[fn];
+    return va < vb ? -1 : va > vb ? 1 : 0;
+  });
+}
+
