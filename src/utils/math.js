@@ -98,3 +98,8 @@ export function median(arr) {
   return sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
 }
 
+export function roundTo(n, decimals = 0) {
+  const factor = Math.pow(10, decimals);
+  return Math.round(n * factor) / factor;
+}
+
