@@ -37,3 +37,8 @@ export function isValidHex(hex) {
   return /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(hex);
 }
 
+export function complementary(hex) {
+  const { r, g, b } = hexToRgb(hex);
+  return rgbToHex(255 - r, 255 - g, 255 - b);
+}
+
