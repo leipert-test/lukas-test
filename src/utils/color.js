@@ -33,3 +33,7 @@ export function randomColor() {
   return "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
 }
 
+export function isValidHex(hex) {
+  return /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(hex);
+}
+
