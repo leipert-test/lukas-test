@@ -101,3 +101,7 @@ export function last(arr, n = 1) {
   return n === 1 ? arr[arr.length - 1] : arr.slice(-n);
 }
 
+export function sum(arr) {
+  return arr.reduce((total, v) => total + v, 0);
+}
+
