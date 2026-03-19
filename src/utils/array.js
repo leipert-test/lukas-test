@@ -14,3 +14,7 @@ export function flatten(arr, depth = Infinity) {
     : arr.slice();
 }
 
+export function unique(arr) {
+  return [...new Set(arr)];
+}
+
