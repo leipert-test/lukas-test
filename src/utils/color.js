@@ -99,3 +99,8 @@ export function grayscale(hex) {
   return rgbToHex(gray, gray, gray);
 }
 
+export function invertColor(hex) {
+  const { r, g, b } = hexToRgb(hex);
+  return rgbToHex(255 - r, 255 - g, 255 - b);
+}
+
