@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import Header from './Header.jsx';
+import Footer from './Footer.jsx';
 import MathDemo from './MathDemo.jsx';
 import StringDemo from './StringDemo.jsx';
 import ArrayDemo from './ArrayDemo.jsx';
@@ -27,10 +29,10 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard">
-      <header className="dashboard-header">
-        <h1>JS Utility Library</h1>
-        <p className="dashboard-subtitle">Interactive demos for math, string, array, color, and date utilities</p>
-      </header>
+      <Header
+        title="JS Utility Library"
+        subtitle="Interactive demos for math, string, array, color, and date utilities"
+      />
       <nav className="dashboard-nav">
         {TABS.map((tab) => (
           <button
@@ -46,9 +48,7 @@ export default function Dashboard() {
       <main className="dashboard-content">
         <ActiveComponent />
       </main>
-      <footer className="dashboard-footer">
-        <p>Built with React + Vite</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
