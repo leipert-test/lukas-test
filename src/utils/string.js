@@ -104,3 +104,7 @@ export function wrap(str, wrapper) {
   return wrapper + str + wrapper;
 }
 
+export function initials(str) {
+  return str.split(/\s+/).map((w) => w.charAt(0).toUpperCase()).join('');
+}
+
