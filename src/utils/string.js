@@ -52,3 +52,7 @@ export function countOccurrences(str, substr) {
   return count;
 }
 
+export function isEmail(str) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str);
+}
+
