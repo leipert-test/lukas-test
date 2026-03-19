@@ -83,3 +83,13 @@ export function hslToRgb(h, s, l) {
   return { r: Math.round(r * 255), g: Math.round(g * 255), b: Math.round(b * 255) };
 }
 
+export function mixColors(hex1, hex2, weight = 0.5) {
+  const c1 = hexToRgb(hex1);
+  const c2 = hexToRgb(hex2);
+  return rgbToHex(
+    Math.round(c1.r * (1 - weight) + c2.r * weight),
+    Math.round(c1.g * (1 - weight) + c2.g * weight),
+    Math.round(c1.b * (1 - weight) + c2.b * weight)
+  );
+}
+
