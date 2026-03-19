@@ -100,3 +100,7 @@ export function endsWith(str, suffix) {
   return str.slice(-suffix.length) === suffix;
 }
 
+export function wrap(str, wrapper) {
+  return wrapper + str + wrapper;
+}
+
