@@ -108,3 +108,8 @@ export function initials(str) {
   return str.split(/\s+/).map((w) => w.charAt(0).toUpperCase()).join('');
 }
 
+export function maskString(str, visibleChars = 4, maskChar = '*') {
+  if (str.length <= visibleChars) return str;
+  return maskChar.repeat(str.length - visibleChars) + str.slice(-visibleChars);
+}
+
