@@ -51,3 +51,11 @@ export function sample(arr, n = 1) {
   return n === 1 ? shuffled[0] : shuffled.slice(0, n);
 }
 
+export function range(start, end, step = 1) {
+  const result = [];
+  for (let i = start; i < end; i += step) {
+    result.push(i);
+  }
+  return result;
+}
+
