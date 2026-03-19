@@ -32,3 +32,8 @@ export function union(a, b) {
   return [...new Set([...a, ...b])];
 }
 
+export function zip(a, b) {
+  const len = Math.min(a.length, b.length);
+  return Array.from({ length: len }, (_, i) => [a[i], b[i]]);
+}
+
