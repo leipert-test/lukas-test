@@ -17,3 +17,7 @@ export function divide(a, b) {
   return a / b;
 }
 
+export function modulo(a, b) {
+  return ((a % b) + b) % b;
+}
+
