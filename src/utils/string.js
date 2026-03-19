@@ -29,3 +29,8 @@ export function truncate(str, length, suffix = '...') {
   return str.slice(0, length - suffix.length) + suffix;
 }
 
+export function padStart(str, length, char = ' ') {
+  while (str.length < length) str = char + str;
+  return str;
+}
+
