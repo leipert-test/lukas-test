@@ -108,3 +108,15 @@ export function getAge(birthDate) {
   return age;
 }
 
+export function getBusinessDays(startDate, endDate) {
+  let count = 0;
+  const current = new Date(startDate);
+  const end = new Date(endDate);
+  while (current <= end) {
+    const day = current.getDay();
+    if (day !== 0 && day !== 6) count++;
+    current.setDate(current.getDate() + 1);
+  }
+  return count;
+}
+
