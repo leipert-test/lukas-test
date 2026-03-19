@@ -28,3 +28,9 @@ export function daysInMonth(year, month) {
   return new Date(year, month, 0).getDate();
 }
 
+export function addDays(date, days) {
+  const result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+}
+
