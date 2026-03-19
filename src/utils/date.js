@@ -34,3 +34,7 @@ export function addDays(date, days) {
   return result;
 }
 
+export function subtractDays(date, days) {
+  return addDays(date, -days);
+}
+
