@@ -82,3 +82,7 @@ export function gcd(a, b) {
   return a;
 }
 
+export function lcm(a, b) {
+  return Math.abs(a * b) / gcd(a, b);
+}
+
