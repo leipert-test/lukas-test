@@ -21,3 +21,7 @@ export function modulo(a, b) {
   return ((a % b) + b) % b;
 }
 
+export function power(base, exp) {
+  return Math.pow(base, exp);
+}
+
