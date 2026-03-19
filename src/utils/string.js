@@ -65,3 +65,12 @@ export function wordCount(str) {
   return str.trim().split(/\s+/).filter(Boolean).length;
 }
 
+export function slugify(str) {
+  return str
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/[\s_]+/g, '-')
+    .replace(/-+/g, '-');
+}
+
