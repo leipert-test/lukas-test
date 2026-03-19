@@ -64,3 +64,11 @@ export function endOfDay(date) {
   return d;
 }
 
+export function isToday(date) {
+  const today = new Date();
+  const d = new Date(date);
+  return d.getDate() === today.getDate() &&
+    d.getMonth() === today.getMonth() &&
+    d.getFullYear() === today.getFullYear();
+}
+
