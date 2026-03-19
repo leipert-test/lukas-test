@@ -105,3 +105,7 @@ export function sum(arr) {
   return arr.reduce((total, v) => total + v, 0);
 }
 
+export function product(arr) {
+  return arr.reduce((total, v) => total * v, 1);
+}
+
