@@ -34,3 +34,7 @@ export function abs(n) {
   return n < 0 ? -n : n;
 }
 
+export function min(...args) {
+  return args.reduce((m, v) => (v < m ? v : m), args[0]);
+}
+
