@@ -18,3 +18,8 @@ export function unique(arr) {
   return [...new Set(arr)];
 }
 
+export function intersection(a, b) {
+  const setB = new Set(b);
+  return a.filter((x) => setB.has(x));
+}
+
