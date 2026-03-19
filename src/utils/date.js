@@ -43,3 +43,8 @@ export function isWeekend(date) {
   return day === 0 || day === 6;
 }
 
+export function getWeekDay(date) {
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  return days[new Date(date).getDay()];
+}
+
