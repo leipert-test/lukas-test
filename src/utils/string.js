@@ -96,3 +96,7 @@ export function startsWith(str, prefix) {
   return str.slice(0, prefix.length) === prefix;
 }
 
+export function endsWith(str, suffix) {
+  return str.slice(-suffix.length) === suffix;
+}
+
