@@ -28,3 +28,7 @@ export function difference(a, b) {
   return a.filter((x) => !setB.has(x));
 }
 
+export function union(a, b) {
+  return [...new Set([...a, ...b])];
+}
+
