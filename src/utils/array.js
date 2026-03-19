@@ -46,3 +46,8 @@ export function shuffle(arr) {
   return result;
 }
 
+export function sample(arr, n = 1) {
+  const shuffled = shuffle(arr);
+  return n === 1 ? shuffled[0] : shuffled.slice(0, n);
+}
+
