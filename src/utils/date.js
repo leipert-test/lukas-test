@@ -52,3 +52,9 @@ export function getQuarter(date) {
   return Math.ceil((new Date(date).getMonth() + 1) / 3);
 }
 
+export function startOfDay(date) {
+  const d = new Date(date);
+  d.setHours(0, 0, 0, 0);
+  return d;
+}
+
