@@ -125,3 +125,12 @@ export function desaturate(hex, amount) {
   return rgbToHex(rgb.r, rgb.g, rgb.b);
 }
 
+export function generatePalette(hex, count = 5) {
+  const palette = [];
+  for (let i = 0; i < count; i++) {
+    const amount = (i / (count - 1)) * 0.8;
+    palette.push(lighten(hex, amount));
+  }
+  return palette;
+}
+
