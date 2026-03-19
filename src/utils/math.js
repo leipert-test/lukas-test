@@ -46,3 +46,7 @@ export function clamp(value, lower, upper) {
   return Math.min(Math.max(value, lower), upper);
 }
 
+export function lerp(start, end, t) {
+  return start + (end - start) * t;
+}
+
