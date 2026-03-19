@@ -72,3 +72,7 @@ export function isToday(date) {
     d.getFullYear() === today.getFullYear();
 }
 
+export function isFuture(date) {
+  return new Date(date) > new Date();
+}
+
