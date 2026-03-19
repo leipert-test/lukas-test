@@ -91,3 +91,10 @@ export function average(arr) {
   return arr.reduce((sum, v) => sum + v, 0) / arr.length;
 }
 
+export function median(arr) {
+  if (arr.length === 0) throw new Error("Cannot find median of empty array");
+  const sorted = [...arr].sort((a, b) => a - b);
+  const mid = Math.floor(sorted.length / 2);
+  return sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+}
+
