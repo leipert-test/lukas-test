@@ -38,3 +38,8 @@ export function subtractDays(date, days) {
   return addDays(date, -days);
 }
 
+export function isWeekend(date) {
+  const day = new Date(date).getDay();
+  return day === 0 || day === 6;
+}
+
