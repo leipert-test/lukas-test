@@ -71,3 +71,11 @@ export function groupBy(arr, fn) {
   }, {});
 }
 
+export function countBy(arr, fn) {
+  return arr.reduce((counts, item) => {
+    const key = typeof fn === 'function' ? fn(item) : item[fn];
+    counts[key] = (counts[key] || 0) + 1;
+    return counts;
+  }, {});
+}
+
