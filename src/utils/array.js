@@ -119,3 +119,10 @@ export function rotate(arr, n) {
   return [...arr.slice(offset), ...arr.slice(0, offset)];
 }
 
+export function frequency(arr) {
+  return arr.reduce((map, item) => {
+    map[item] = (map[item] || 0) + 1;
+    return map;
+  }, {});
+}
+
