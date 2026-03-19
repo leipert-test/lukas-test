@@ -48,3 +48,7 @@ export function getWeekDay(date) {
   return days[new Date(date).getDay()];
 }
 
+export function getQuarter(date) {
+  return Math.ceil((new Date(date).getMonth() + 1) / 3);
+}
+
