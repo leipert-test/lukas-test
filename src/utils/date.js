@@ -20,3 +20,7 @@ export function daysBetween(date1, date2) {
   return Math.floor(diffMs / (1000 * 60 * 60 * 24));
 }
 
+export function isLeapYear(year) {
+  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+}
+
