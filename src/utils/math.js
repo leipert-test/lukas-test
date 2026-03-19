@@ -86,3 +86,8 @@ export function lcm(a, b) {
   return Math.abs(a * b) / gcd(a, b);
 }
 
+export function average(arr) {
+  if (arr.length === 0) throw new Error("Cannot average empty array");
+  return arr.reduce((sum, v) => sum + v, 0) / arr.length;
+}
+
