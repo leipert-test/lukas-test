@@ -79,3 +79,8 @@ export function escapeHtml(str) {
   return str.replace(/[&<>"']/g, (c) => map[c]);
 }
 
+export function unescapeHtml(str) {
+  const map = { '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '"', '&#039;': "'" };
+  return str.replace(/&(amp|lt|gt|quot|#039);/g, (m) => map[m]);
+}
+
