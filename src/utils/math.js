@@ -38,3 +38,7 @@ export function min(...args) {
   return args.reduce((m, v) => (v < m ? v : m), args[0]);
 }
 
+export function max(...args) {
+  return args.reduce((m, v) => (v > m ? v : m), args[0]);
+}
+
