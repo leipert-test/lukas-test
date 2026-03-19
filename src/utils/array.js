@@ -87,3 +87,9 @@ export function sortBy(arr, fn) {
   });
 }
 
+export function partition(arr, fn) {
+  const pass = [], fail = [];
+  arr.forEach((item) => (fn(item) ? pass : fail).push(item));
+  return [pass, fail];
+}
+
