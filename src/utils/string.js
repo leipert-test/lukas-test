@@ -39,3 +39,7 @@ export function padEnd(str, length, char = ' ') {
   return str;
 }
 
+export function reverse(str) {
+  return [...str].reverse().join('');
+}
+
