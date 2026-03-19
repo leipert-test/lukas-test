@@ -92,3 +92,7 @@ export function trimWhitespace(str) {
   return str.replace(/\s+/g, ' ').trim();
 }
 
+export function startsWith(str, prefix) {
+  return str.slice(0, prefix.length) === prefix;
+}
+
