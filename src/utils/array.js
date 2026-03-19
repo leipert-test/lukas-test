@@ -113,3 +113,9 @@ export function take(arr, n) {
   return arr.slice(0, n);
 }
 
+export function rotate(arr, n) {
+  const len = arr.length;
+  const offset = ((n % len) + len) % len;
+  return [...arr.slice(offset), ...arr.slice(0, offset)];
+}
+
