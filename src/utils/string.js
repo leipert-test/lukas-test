@@ -84,3 +84,7 @@ export function unescapeHtml(str) {
   return str.replace(/&(amp|lt|gt|quot|#039);/g, (m) => map[m]);
 }
 
+export function repeat(str, times) {
+  return new Array(times).fill(str).join('');
+}
+
