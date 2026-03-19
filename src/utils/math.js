@@ -25,3 +25,8 @@ export function power(base, exp) {
   return Math.pow(base, exp);
 }
 
+export function sqrt(n) {
+  if (n < 0) throw new Error("Cannot sqrt negative number");
+  return Math.sqrt(n);
+}
+
